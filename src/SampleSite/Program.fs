@@ -16,5 +16,5 @@ let main [| iisPort |] =
                         socketBinding = { defaultConfig.bindings.Head.socketBinding with port = iisPort } } ]
         }
 
-    startWebServer config (OK "Hello World")
+    startWebServer config (OK (sprintf "Hello World from Azure Websites, running in a full VS project! No scripts here. Running on port %d" iisPort))
     0 // return an integer exit code
