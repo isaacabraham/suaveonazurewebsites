@@ -8,7 +8,7 @@ open System
 [<EntryPoint>]
 let main [| iisPort |] =
     let iisPort = uint16 iisPort
-
+    printfn "Received port of %d" iisPort
     let config =
         { defaultConfig with
             bindings =
