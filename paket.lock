@@ -2,5 +2,36 @@ NUGET
   remote: https://nuget.org/api/v2
   specs:
     FSharp.Core (4.0.0.1)
+    Microsoft.ApplicationInsights (1.2.3) - content: none, framework: >= net40
+      Microsoft.Bcl.Async (>= 1.0.168) - framework: net40, wpv8.0
+      Microsoft.Diagnostics.Tracing.EventSource.Redist (>= 1.1.24) - framework: net40
+    Microsoft.ApplicationInsights.Agent.Intercept (1.2.0) - content: none, framework: >= net40
+      Microsoft.Diagnostics.Tracing.EventSource.Redist (>= 1.1.24) - framework: net40
+    Microsoft.ApplicationInsights.DependencyCollector (1.2.3) - content: none, framework: >= net40
+      Microsoft.ApplicationInsights (1.2.3) - framework: >= net40
+      Microsoft.ApplicationInsights.Agent.Intercept (>= 1.2.0) - framework: >= net40
+    Microsoft.ApplicationInsights.PerfCounterCollector (1.2.3) - content: none, framework: >= net40
+      Microsoft.ApplicationInsights (>= 1.2.3) - framework: net40
+      Microsoft.ApplicationInsights (1.2.3) - framework: >= net45
+      Microsoft.Diagnostics.Tracing.EventSource.Redist (>= 1.1.24) - framework: net40
+    Microsoft.ApplicationInsights.Web (1.2.3) - content: none
+      Microsoft.ApplicationInsights (1.2.3) - framework: >= net40
+      Microsoft.ApplicationInsights.WindowsServer (>= 1.2.3) - framework: >= net40
+      Microsoft.Diagnostics.Tracing.EventSource.Redist (>= 1.1.24) - framework: net40
+    Microsoft.ApplicationInsights.WindowsServer (1.2.3) - content: none, framework: >= net40
+      Microsoft.ApplicationInsights (1.2.3) - framework: >= net40
+      Microsoft.ApplicationInsights.DependencyCollector (>= 1.2.3) - framework: >= net40
+      Microsoft.ApplicationInsights.PerfCounterCollector (>= 1.2.3) - framework: >= net40
+      Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel (>= 1.2.3) - framework: >= net40
+      Microsoft.Diagnostics.Tracing.EventSource.Redist (>= 1.1.24) - framework: net40
+    Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel (1.2.3) - content: none, framework: >= net40
+      Microsoft.ApplicationInsights (1.2.3) - framework: >= net40
+      Microsoft.Diagnostics.Tracing.EventSource.Redist (>= 1.1.24) - framework: net40
+    Microsoft.Bcl (1.1.10) - content: none, framework: net40
+      Microsoft.Bcl.Build (>= 1.0.14)
+    Microsoft.Bcl.Async (1.0.168) - content: none, framework: net40
+      Microsoft.Bcl (>= 1.1.8)
+    Microsoft.Bcl.Build (1.0.21) - import_targets: false, content: none, framework: net40
+    Microsoft.Diagnostics.Tracing.EventSource.Redist (1.1.28) - content: none, framework: net40
     Suave (0.33.0)
       FSharp.Core (>= 3.1.2.5)

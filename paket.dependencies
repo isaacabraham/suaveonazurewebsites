@@ -1,2 +1,3 @@
 source https://nuget.org/api/v2
 nuget suave
+nuget Microsoft.ApplicationInsights.Web content:none
