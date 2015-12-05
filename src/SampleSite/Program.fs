@@ -1,21 +1,13 @@
-﻿open Suave
-open Suave.Http.Successful
+﻿open Suave.Http.Successful
 open Suave.Web
 open Suave.Http
-open Suave.Http.Applicatives
+open Suave.Types
 open System
+open System.Net
 
+//If running locally, make sure you you supply a port number to the executable.
 [<EntryPoint>]
-let main [| iisPort |] =
-    let iisPort = uint16 iisPort
-
-    let config =
-        { defaultConfig with
-            bindings =
-                [ { defaultConfig.bindings.Head with
-                        socketBinding = { defaultConfig.bindings.Head.socketBinding with port = iisPort } } ]
-        }
-
-
-    startWebServer config (OK (sprintf "Hello World from Suave running on Azure Websites in a full VS project! No scripts here. Running on port %d" iisPort))
-    0 // return an integer exit code
+let main [| port |] =
+    let config = { defaultConfig with bindings = [ HttpBinding.mk HTTP IPAddress.Loopback (uint16 port) ] }
+    startWebServer config (warbler (fun _ -> OK (sprintf "%O: Hello World from Suave running on Azure Websites in a full VS project! No scripts here. Running on port %s." DateTime.UtcNow port)))
+    0
