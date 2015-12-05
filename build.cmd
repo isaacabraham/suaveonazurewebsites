@@ -52,7 +52,8 @@ IF /I "SampleSite.sln" NEQ "" (
 )
 
 :: Build to the temporary path
-call :ExecuteCmd "%MSBUILD_PATH%" "%DEPLOYMENT_SOURCE%" /m /t:Build /v:n /p:Configuration=Release;OutputPath="%DEPLOYMENT_TEMP%";UseSharedCompilation=false /p:SolutionDir="%DEPLOYMENT_SOURCE%" %SCM_BUILD_ARGS%
+cd "%DEPLOYMENT_SOURCE%"
+call :ExecuteCmd "%MSBUILD_PATH%" /m /t:Build /p:Configuration=Release;OutputPath="%DEPLOYMENT_TEMP%";UseSharedCompilation=false %SCM_BUILD_ARGS%
 IF !ERRORLEVEL! NEQ 0 goto error
 
 :: KuduSync
