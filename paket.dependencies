@@ -1,3 +1,4 @@
 source https://nuget.org/api/v2
+redirects: on
 nuget suave
 nuget Microsoft.ApplicationInsights.Web content:none
