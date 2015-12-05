@@ -61,10 +61,14 @@
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Program.fs" />
+    <None Include="Scripts\Script1.fsx" />
+    <None Include="Scripts\load-references-debug.fsx" />
+    <None Include="Scripts\load-project-debug.fsx" />
     <None Include="paket.references" />
     <Content Include="web.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="ApplicationInsights.config" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
