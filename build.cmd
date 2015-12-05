@@ -57,11 +57,11 @@ cd
 cd "%DEPLOYMENT_SOURCE%"
 call :ExecuteCmd "%MSBUILD_PATH%" /m /t:Build /p:Configuration=Release;OutputPath="%DEPLOYMENT_TEMP%";UseSharedCompilation=false %SCM_BUILD_ARGS%
 IF !ERRORLEVEL! NEQ 0 goto error
+cd ..
 
 :: KuduSync
 call :ExecuteCmd "%KUDU_SYNC_CMD%" -v 50 -f "%DEPLOYMENT_TEMP%" -t "%DEPLOYMENT_TARGET%" -n "%NEXT_MANIFEST_PATH%" -p "%PREVIOUS_MANIFEST_PATH%" -i ".git;.hg;.deployment;deploy.cmd"
 IF !ERRORLEVEL! NEQ 0 goto error
-cd ..
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
